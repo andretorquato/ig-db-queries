@@ -17,7 +17,6 @@ export class GamesRepository implements IGamesRepository {
       .createQueryBuilder("games")
       .where("games.title ILIKE :param", { param: `%${param}%` })
       .getMany();
-    // Complete usando query builder
   }
 
   async countAllGames(): Promise<[{ count: string }]> {
@@ -31,6 +30,5 @@ export class GamesRepository implements IGamesRepository {
     .of(id)
     .loadMany();
     return users;
-    // Complete usando query builder
   }
 }
